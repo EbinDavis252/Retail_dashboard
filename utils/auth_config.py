@@ -11,7 +11,7 @@ def get_authenticator():
                 'admin': {
                     'email': 'admin@example.com',
                     'name': 'Admin',
-                    'password': stauth.Hasher(['admin123']).generate()[0]  # hash the password
+                    'password': stauth.Hasher(['admin123']).generate()  # hash the password
                 }
             }
         },
