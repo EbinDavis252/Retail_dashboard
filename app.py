@@ -159,4 +159,4 @@ elif choice == "Dashboard":
         st.bar_chart(monthly.set_index('month'))
 
         st.markdown("### 🔍 Correlation Matrix")
-        st.dataframe(data.corr(numeric_only=True).round(2))                                                                                   So this is the full app.py code for the streamlit retail app. 
+        st.dataframe(data.corr(numeric_only=True).round(2))                                                                                   
