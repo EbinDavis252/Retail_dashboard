@@ -1,0 +1,8 @@
+streamlit
+streamlit-authenticator
+pandas
+sqlalchemy
+plotly
+matplotlib
+seaborn
+PyYAML
