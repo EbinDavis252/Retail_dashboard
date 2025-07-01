@@ -1,0 +1,17 @@
+credentials:
+  usernames:
+    admin:
+      email: admin@example.com
+      name: Admin User
+      password: '$2b$12$kJ7bPEUsMQcE8eOdzM1xZOCFzNcRzLG9Tn9Yf12HkQh2.AuM9wzqK'  # password: admin123
+    demo:
+      email: demo@example.com
+      name: Demo User
+      password: '$2b$12$tW8Fjz6q/Pz5HZOH0Pq3OuvK0Tb6VmOtq.XsVLl4MP8mc8GnmDcm2'  # password: demo123
+cookie:
+  expiry_days: 7
+  key: some_signature_key
+  name: retail_dashboard_login
+preauthorized:
+  emails:
+    - admin@example.com
