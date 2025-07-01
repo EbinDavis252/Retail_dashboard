@@ -1,20 +1,45 @@
 import streamlit as st
 from utils.auth_config import get_authenticator
 
-# Get authenticator
+# ======================
+# Initialize Authenticator
+# ======================
 authenticator, config = get_authenticator()
 
-# Login interface
-name, auth_status, username = authenticator.login('Login', 'main')
+# ======================
+# User Login
+# ======================
+name, authentication_status, username = authenticator.login("Login", "main")
 
-if auth_status is False:
-    st.error('❌ Incorrect username or password.')
-elif auth_status is None:
-    st.warning('⚠️ Please enter your credentials.')
-elif auth_status:
-    # If logged in, show the app
-    authenticator.logout('Logout', 'sidebar')
+# ======================
+# Handle Login States
+# ======================
+if authentication_status:
+    authenticator.logout("Logout", "sidebar")
     st.sidebar.success(f"Welcome, {name} 👋")
+    
+    # ======================
+    # Your Retail Dashboard Starts Here
+    # ======================
+    st.title("🛒 Retail Sales Dashboard")
+    st.write("Welcome to your Streamlit retail dashboard!")
+    
+    # Example placeholder chart or table
+    st.markdown("### 📊 Sample Sales Overview")
+    st.metric("Total Revenue", "₹12,34,567")
+    st.metric("Total Units Sold", "8,765")
+    st.metric("Top Category", "Electronics")
+
+    # You can replace this with actual plots, charts, and filters
+    # Example:
+    # st.plotly_chart(my_plot)
+    # st.dataframe(my_dataframe)
+
+elif authentication_status is False:
+    st.error("🚫 Incorrect username or password. Please try again.")
+
+elif authentication_status is None:
+    st.warning("👤 Please enter your username and password to continue.")
 
     # Paste your original Streamlit app logic below this line
     # -------------------- PAGE CONFIG --------------------
